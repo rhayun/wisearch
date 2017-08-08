@@ -20,7 +20,7 @@
 <configuration>
   <property>
     <name>http.agent.name</name>
-    <value>Wisbot</value>
+    <value>WiSearch</value>
   </property>
   <property>
     <name>http.agent.version</name>
@@ -28,7 +28,7 @@
   </property>
   <property>
     <name>http.robots.agents</name>
-    <value>Wisbot</value>
+    <value>WiSearch</value>
   </property>
   <property>
     <name>storage.data.store.class</name>
