@@ -7,36 +7,35 @@ set -o pipefail # Returns exit status of the last command in the pipe that retur
 IFS=$'\n\t' # Defines how Bash splits words and iterates arrays. This defines newlines and tabs as delimiters.
 
 # Default Settings
-INSTALL_COMMAND="apt-get -q "
 INSTALL_DIR="/opt"
 
 # Force IPv4
-$INSTALL_COMMAND -o Acquire::ForceIPv4=true update
+apt-get -o Acquire::ForceIPv4=true update
 
 # Initialization
-$INSTALL_COMMAND update
-$INSTALL_COMMAND upgrade
+apt-get -y update
+apt-get -y upgrade
 
 
 # Build Tools
-$INSTALL_COMMAND install build-essential # Essential for compiling source (includes GCC compiler, etc).
+apt-get -y install build-essential # Essential for compiling source (includes GCC compiler, etc).
 
 # Package Management
-$INSTALL_COMMAND install python-software-properties # Provides the "add-apt-repository" command.
+apt-get -y install python-software-properties # Provides the "add-apt-repository" command.
 
 # Git
-$INSTALL_COMMAND install git-core
+apt-get -y install git-core
 
 # Unzip
-$INSTALL_COMMAND install unzip
+apt-get -y install unzip
 
 # Ant
-$INSTALL_COMMAND install ant
+apt-get -y install ant
 
 # Java
 add-apt-repository -y ppa:openjdk-r/ppa
-$INSTALL_COMMAND update
-$INSTALL_COMMAND install openjdk-8-jdk
+apt-get -y update
+apt-get -y install openjdk-8-jdk
 echo '' >> /etc/bash.bashrc
 echo 'export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")' >> /etc/bash.bashrc
 source /etc/bash.bashrc
@@ -67,8 +66,8 @@ systemctl restart kibana
 
 # Mongo
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-$INSTALL_COMMAND update
-$INSTALL_COMMAND install mongodb
+apt-get -y update
+apt-get -y install mongodb
 systemctl daemon-reload
 systemctl enable mongodb
 service mongodb start
