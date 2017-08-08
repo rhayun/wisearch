@@ -1,4 +1,7 @@
 # WiSearch
+
+Works on Ubuntu 16.04 LTS
+
 ```
 sudo su -
 cd /tmp
