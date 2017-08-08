@@ -7,7 +7,7 @@ set -o pipefail # Returns exit status of the last command in the pipe that retur
 IFS=$'\n\t' # Defines how Bash splits words and iterates arrays. This defines newlines and tabs as delimiters.
 
 # Default Settings
-INSTALL_COMMAND="apt-get -q -y"
+INSTALL_COMMAND="apt-get -q "
 INSTALL_DIR="/opt"
 
 # Force IPv4
