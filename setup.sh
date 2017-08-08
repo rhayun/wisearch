@@ -99,6 +99,7 @@ echo "$INSTALL_DIR/nutch/runtime/local/bin/nutch index -all" >> $INSTALL_DIR/nut
 # Override files
 cd $INSTALL_DIR
 git clone https://github.com/rhayun/wisearch.git
+cp -a $INSTALL_DIR/wisearch/ivy.xml $INSTALL_DIR/nutch/ivy/
 cp -a $INSTALL_DIR/wisearch/gora.properties $INSTALL_DIR/nutch/conf/
 cp -a $INSTALL_DIR/wisearch/nutch-site.xml $INSTALL_DIR/nutch/conf/
 cp -a $INSTALL_DIR/wisearch/regex-urlfilter.txt $INSTALL_DIR/nutch/conf/
@@ -109,6 +110,8 @@ rm -rf $INSTALL_DIR/wisearch
 cd $INSTALL_DIR/nutch
 ant clean
 ant runtime
+
+source /etc/bash.bashrc
 
 
 
